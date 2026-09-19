@@ -1,6 +1,8 @@
-import Header from './components/Header'
+import Header from './components/header'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import Github from './components/GitHubCorner'
+import StarRating from './components/StarRating'
 
 const mainStyle = {
   maxWidth: "700px",
@@ -32,6 +34,7 @@ const favoriteMovies = [
 ]
   return (
     <div className="App">
+      <Github repoUrl={"https://github.com/RileyTemme/RileyTemme.github.io"}></Github>
       <Header name="Riley Temme">
         <Nav></Nav>
       </Header>
@@ -44,7 +47,7 @@ const favoriteMovies = [
           <h2>Favorite Movies</h2>
           <ul style={movieListStyle}>
             {favoriteMovies.map((movie, index) => (
-              <li key={index}>{movie}</li>
+              <li key={index}>{movie}<br/><StarRating initialRating={5}/></li>
             ))}
           </ul>
         </section>
