@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "The Fast and the Furious",
+        "year": 2001,
+        "genre": "Action",
+        "director": "Rob Cohen",
+        "rating": 0
+    },
+    {
+        "id": 2,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "year": 2004,
+        "genre": "Sci-Fi",
+        "director": "Alfonso Cuarón",
+        "rating": 0
+    },
+    {
+        "id": 3,
+        "title": "Whiplash",
+        "year": 2014,
+        "genre": "Drama",
+        "director": "Damien Chazelle",
+        "rating": 0
+    },
+    {
+        "id": 4,
+        "title": "Intersellar",
+        "year": 2014,
+        "genre": "Sci-Fi",
+        "director": "Christopher Nolan",
+        "rating": 0
+    }
+]
