@@ -1,7 +1,18 @@
 :root {
+	
 	--bg-color: #eef1f4;
 	--bg-accent: #ffffff;
 	--fontColor: #1f2933;
+	--bg-hover: #e2e8ee;
+	--border-hover: #b8c3cd;
+}
+
+:root[data-theme="dark"] {
+	--bg-color: #151a20;
+	--bg-accent: #222a33;
+	--fontColor: #e6eaee;
+	--bg-hover: #2f3a46;
+	--border-hover: #4a5866;
 }
 
 body {
@@ -17,9 +28,51 @@ a:active, a:link, a:visited {
 }
 
 .nav li:hover {
-	background-color: #e2e8ee !important;
-	border-color: #b8c3cd;
+	background-color: var(--bg-hover) !important;
+	border-color: var(--border-hover) !important;
 	transform: translateY(-1px);
+}
+
+.theme-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	width: fit-content;
+	margin: 1rem auto 0;
+	padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+	border: 1px solid var(--border-hover);
+	border-radius: 999px;
+	background: var(--bg-accent);
+	color: var(--fontColor);
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.theme-toggle:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid var(--border-hover);
+	outline-offset: 2px;
+}
+
+.theme-toggle__knob {
+	display: grid;
+	place-items: center;
+	width: 1.9rem;
+	height: 1.9rem;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #ffd45e, #ff9d3c);
+	font-size: 1rem;
+	transition: background 300ms ease, transform 300ms ease;
+}
+
+[data-theme="dark"] .theme-toggle__knob {
+	background: linear-gradient(135deg, #5b6bd6, #2a2f6b);
+	transform: rotate(360deg);
 }
 
 .logo {
