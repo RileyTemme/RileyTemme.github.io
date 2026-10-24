@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from './contexts/ThemeContext'
 import Header from './components/header'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
@@ -18,30 +19,14 @@ const sectionStyle = {
 }
 
 function App() {
-
-  const [theme, setTheme] = useState(() => {
-    try {
-      return localStorage.getItem("theme") === "dark" ? "dark" : "light"
-    } catch {
-      return "light"
-    }
-  })
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme)
-    try {
-      localStorage.setItem("theme", theme)
-    } catch {}
-  }, [theme])
-
-  const toggleTheme = () => setTheme(e => (e === "light" ? "dark" : "light"))
+  const { theme } = useContext(ThemeContext)
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <Github repoUrl={"https://github.com/RileyTemme/RileyTemme.github.io"}></Github>
       <Header name="Riley Temme">
         <Nav></Nav>
-        <ThemeToggle theme={theme} onToggle={toggleTheme}></ThemeToggle>
+        <ThemeToggle></ThemeToggle>
       </Header>
       <main style={mainStyle}>
         <section style={sectionStyle}>

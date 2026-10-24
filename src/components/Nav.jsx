@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ThemeContext } from '../contexts/ThemeContext'
+
 const navStyle = {
     display: "flex",
     alignItems: "center",
@@ -9,7 +12,6 @@ const navStyle = {
 }
 
 const navItemStyle = {
-    backgroundColor: "var(--bg-accent)",
     border: "1px solid #d7dde3",
     borderRadius: "6px",
     margin: "0",
@@ -24,9 +26,11 @@ const navLinkStyle = {
 
 
 const Nav = () => {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <nav>
-            <ul style={navStyle} className="nav">
+            <ul style={navStyle} className={`nav ${theme}`}>
                 <li style={navItemStyle}><a style={navLinkStyle} href="/">Home</a></li>
                 <li style={navItemStyle}><a style={navLinkStyle} href="/">Projects</a></li>
                 <li style={navItemStyle}><a style={navLinkStyle} href="/">Contact</a></li>

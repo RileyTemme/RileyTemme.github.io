@@ -1,5 +1,4 @@
-:root {
-	
+.light {
 	--bg-color: #eef1f4;
 	--bg-accent: #ffffff;
 	--fontColor: #1f2933;
@@ -7,7 +6,7 @@
 	--border-hover: #b8c3cd;
 }
 
-:root[data-theme="dark"] {
+.dark {
 	--bg-color: #151a20;
 	--bg-accent: #222a33;
 	--fontColor: #e6eaee;
@@ -16,15 +15,31 @@
 }
 
 body {
-    background-color: var(--bg-color);
     margin: 0;
-	color: var(--fontColor);
 	font-family: Arial, sans-serif;
 }
 
+.App {
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	color: var(--fontColor);
+}
+
+.header {
+	border-bottom: 2px solid var(--fontColor);
+}
+
+.footer {
+	color: var(--fontColor);
+}
+
 a:active, a:link, a:visited {
-    color: var(--fontColor);
+	color: var(--fontColor);
 	text-decoration: none;
+}
+
+.nav li {
+	background-color: var(--bg-accent);
 }
 
 .nav li:hover {
@@ -70,7 +85,7 @@ a:active, a:link, a:visited {
 	transition: background 300ms ease, transform 300ms ease;
 }
 
-[data-theme="dark"] .theme-toggle__knob {
+.dark .theme-toggle__knob {
 	background: linear-gradient(135deg, #5b6bd6, #2a2f6b);
 	transform: rotate(360deg);
 }

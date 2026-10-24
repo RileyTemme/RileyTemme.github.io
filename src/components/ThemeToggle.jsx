@@ -1,6 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
+import { ThemeContext } from '../contexts/ThemeContext'
 
-const ThemeToggle = ({theme, onToggle}) => {
+const ThemeToggle = () => {
+   const { theme, setTheme } = useContext(ThemeContext)
    const isDark = theme === "dark"
    const buttonRef = useRef(null)
    const isFirstRender = useRef(true)
@@ -18,12 +20,12 @@ const ThemeToggle = ({theme, onToggle}) => {
    return (
        <button
            ref={buttonRef}
-           className="theme-toggle"
-           onClick={onToggle}
+           className={`theme-toggle ${theme}`}
+           onClick={() => setTheme(isDark ? "light" : "dark")}
            aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
        >
            <span className="theme-toggle__knob">{isDark ? "🌙" : "☀️"}</span>
-           {isDark ? "Dark" : "Light"}
+           {isDark ? "Light Mode" : "Dark Mode"}
        </button>
    )
 }

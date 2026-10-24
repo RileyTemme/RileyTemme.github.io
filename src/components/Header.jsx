@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { ThemeContext } from '../contexts/ThemeContext'
 import logoBase from '../assets/RTRoadAmericaHALO.png'
 import logoHover from '../assets/RTRoadAmericaHOVER.png'
 
@@ -8,7 +10,6 @@ const headerStyle = {
     gap: "3rem",
     minHeight: "190px",
     boxSizing: "border-box",
-    borderBottom: "2px solid var(--fontColor)",
     padding: "1.5rem 2rem"
 }
 
@@ -27,9 +28,11 @@ const titleStyle = {
 
 
 const Header = ({name, children}) => {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <div>
-            <div style={headerStyle} className="header">
+            <div style={headerStyle} className={`header ${theme}`}>
                 <h1 id="logoLink" aria-label="Home" className="logo" style={logoStyle}>
                     <img
                         id="logoBase"
