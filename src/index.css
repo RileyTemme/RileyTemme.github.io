@@ -48,6 +48,38 @@ a:active, a:link, a:visited {
 	transform: translateY(-1px);
 }
 
+.section-manager {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1.5rem 0 0;
+}
+
+.section-manager button {
+	padding: 0.7rem 1.25rem;
+	border: 1px solid #d7dde3;
+	border-radius: 6px;
+	background-color: var(--bg-accent);
+	color: var(--fontColor);
+	font-family: inherit;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.section-manager button:hover {
+	background-color: var(--bg-hover);
+	border-color: var(--border-hover);
+	transform: translateY(-1px);
+}
+
+.section-manager button:focus-visible {
+	outline: 2px solid var(--border-hover);
+	outline-offset: 2px;
+}
+
 .theme-toggle {
 	display: flex;
 	align-items: center;

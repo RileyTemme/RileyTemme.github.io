@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Github from './components/GitHubCorner'
 import MovieList from './components/MovieList'
 import ThemeToggle from './components/ThemeToggle'
+import SectionManager, { useSectionManager } from './components/SectionManager'
 
 const mainStyle = {
   maxWidth: "700px",
@@ -20,6 +21,7 @@ const sectionStyle = {
 
 function App() {
   const { theme } = useContext(ThemeContext)
+  const [ sections, dispatch ] = useSectionManager()
 
   return (
     <div className={`App ${theme}`}>
@@ -28,14 +30,17 @@ function App() {
         <Nav></Nav>
         <ThemeToggle></ThemeToggle>
       </Header>
+      <SectionManager dispatch={dispatch} />
       <main style={mainStyle}>
-        <section style={sectionStyle}>
-          <h2>About Me</h2>
-          <p>Hello! I'm Riley Temme, a student at FVTC for Web Development and Design.</p>
-        </section>
-        <MovieList></MovieList>
+        {sections.showAbout && (
+          <section style={sectionStyle}>
+            <h2>About Me</h2>
+            <p>Hello! I'm Riley Temme, a student at FVTC for Web Development and Design.</p>
+          </section>
+        )}
+        {sections.showFavorites && <MovieList></MovieList>}
       </main>
-      <Footer />
+      {sections.showContact && <Footer />}
     </div>
   )
 }
