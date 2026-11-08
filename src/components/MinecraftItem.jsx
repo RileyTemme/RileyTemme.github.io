@@ -16,7 +16,6 @@ const items =  [
     "mace",
     "bow",
     "crossbow",
-    "shield",
     "turtle_helmet"
 
 ]
