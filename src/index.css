@@ -80,6 +80,32 @@ a:active, a:link, a:visited {
 	outline-offset: 2px;
 }
 
+.section-manager input {
+	padding: 0.7rem 1rem;
+	border: 1px solid #d7dde3;
+	border-radius: 6px;
+	background-color: var(--bg-accent);
+	color: var(--fontColor);
+	font-family: inherit;
+	font-size: 1rem;
+	transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.section-manager input::placeholder {
+	color: var(--fontColor);
+	opacity: 0.5;
+}
+
+.section-manager input:hover {
+	border-color: var(--border-hover);
+}
+
+.section-manager input:focus-visible {
+	outline: 2px solid var(--border-hover);
+	outline-offset: 2px;
+	border-color: var(--border-hover);
+}
+
 .theme-toggle {
 	display: flex;
 	align-items: center;

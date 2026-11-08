@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Github from './components/GitHubCorner'
 import MovieList from './components/MovieList'
+import MinecraftItem from './components/MinecraftItem'
 import ThemeToggle from './components/ThemeToggle'
 import SectionManager, { useSectionManager } from './components/SectionManager'
 
@@ -39,6 +40,9 @@ function App() {
           </section>
         )}
         {sections.showFavorites && <MovieList></MovieList>}
+        <section style={sectionStyle}>
+          <MinecraftItem></MinecraftItem>
+        </section>
       </main>
       {sections.showContact && <Footer />}
     </div>
