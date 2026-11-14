@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { ThemeContext } from '../contexts/ThemeContext'
 
 const navStyle = {
@@ -31,9 +32,9 @@ const Nav = () => {
     return (
         <nav>
             <ul style={navStyle} className={`nav ${theme}`}>
-                <li style={navItemStyle}><a style={navLinkStyle} href="/">Home</a></li>
-                <li style={navItemStyle}><a style={navLinkStyle} href="/">Projects</a></li>
-                <li style={navItemStyle}><a style={navLinkStyle} href="/">Contact</a></li>
+                <li style={navItemStyle}><Link style={navLinkStyle} to="/">Home</Link></li>
+                <li style={navItemStyle}><Link style={navLinkStyle} to="/projects">Projects</Link></li>
+                <li style={navItemStyle}><Link style={navLinkStyle} to="/contact">Contact</Link></li>
             </ul>
         </nav>
     )
